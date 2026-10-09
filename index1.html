@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced JavaScript</title>
+</head>
+<body>
+
+    <script>
+        "use strict";
+
+        // 1. GENERATORS
+        console.log("===== GENERATORS =====");
+
+        function* numberGenerator() {
+            yield 10;
+            yield 20;
+            yield 30;
+        }
+
+        const generator = numberGenerator();
+
+        console.log(generator.next());
+        console.log(generator.next());
+        console.log(generator.next());
+        console.log(generator.next());
+
+
+        // 2. CLASSES, CONSTRUCTOR AND METHODS
+        console.log("===== CLASSES =====");
+
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+
+            introduce() {
+                console.log('Name: ${this.name}');
+                console.log('Age: ${this.age}');
+            }
+
+            greet() {
+                console.log('Hello, my name is ${this.name}');
+            }
+        }
+
+        const person1 = new Person("Snehith", 22);
+
+        person1.introduce();
+        person1.greet();
+
+
+        // 3. PROTOTYPE
+        console.log("===== PROTOTYPE =====");
+
+        Person.prototype.showRole = function () {
+            console.log("I am a person");
+        };
+
+        person1.showRole();
+
+        console.log("Own name:", person1.hasOwnProperty("name"));
+        console.log("Own showRole:", person1.hasOwnProperty("showRole"));
+
+
+        // 4. PROTOTYPE CHAIN
+        console.log("===== PROTOTYPE CHAIN =====");
+
+        console.log(
+            Object.getPrototypeOf(person1) === Person.prototype
+        );
+
+        console.log(
+            Object.getPrototypeOf(Person.prototype) === Object.prototype
+        );
+
+        console.log(
+            Object.getPrototypeOf(Object.prototype)
+        );
+
+
+        // 5. INHERITANCE, EXTENDS AND SUPER
+        console.log("===== INHERITANCE =====");
+
+        class Employee extends Person {
+            constructor(name, age, job, salary) {
+                super(name, age);
+
+                this.job = job;
+                this.salary = salary;
+            }
+
+            displayEmployee() {
+                this.introduce();
+                console.log('Job: ${this.job}');
+                console.log('Salary: ${this.salary}');
+            }
+
+            work() {
+                console.log('${this.name} works as a ${this.job}');
+            }
+        }
+
+        const employee1 = new Employee(
+            "Sai",
+            23,
+            "JavaScript Developer",
+            30000
+        );
+
+        employee1.displayEmployee();
+        employee1.greet();
+        employee1.work();
+
+        console.log("Is Employee:", employee1 instanceof Employee);
+        console.log("Is Person:", employee1 instanceof Person);
+
+
+        // 6. ERROR HANDLING
+        console.log("===== ERROR HANDLING =====");
+
+        function divide(a, b) {
+            if (b === 0) {
+                throw new Error("Cannot divide by zero!");
+            }
+
+            return a / b;
+        }
+
+        try {
+            console.log("Result:", divide(10, 2));
+            console.log("Result:", divide(10, 0));
+            console.log("This line will not execute");
+        } catch (error) {
+            console.log("Error:", error.message);
+        } finally {
+            console.log("Division operation completed");
+        }
+
+
+        // 7. CUSTOM ERROR VALIDATION
+        console.log("===== VALIDATION =====");
+
+        function checkAge(age) {
+            try {
+                if (typeof age !== "number" || !Number.isFinite(age)) {
+                    throw new TypeError("Age must be a valid number");
+                }
+
+                if (age < 18) {
+                    throw new Error("Age must be at least 18");
+                }
+
+                console.log("Eligible");
+            } catch (error) {
+                console.log("Validation error:", error.message);
+            } finally {
+                console.log("Age validation completed");
+            }
+        }
+
+        checkAge(22);
+        checkAge(15);
+        checkAge("twenty");
+
+    </script>
+
+</body>
+</html>
