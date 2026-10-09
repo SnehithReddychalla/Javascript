@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Practice</title>
+</head>
+
+<body>
+
+    <h1 id="title">My To-Do List</h1>
+
+    <div id="container">
+
+        <input id="taskInput" type="text" placeholder="Enter a task">
+
+        <button id="addButton">Add Task</button>
+
+        <ul id="taskList"></ul>
+
+    </div>
+
+    <script>
+
+        // =========================
+        // 1. DOM ELEMENT SELECTION
+        // =========================
+
+        let title = document.getElementById("title");
+        let container = document.getElementById("container");
+        let taskInput = document.getElementById("taskInput");
+        let addButton = document.getElementById("addButton");
+        let taskList = document.getElementById("taskList");
+
+
+        // =========================
+        // 2. DOM TRAVERSING
+        // =========================
+
+        // Parent
+        console.log(taskList.parentElement);
+
+        // Children
+        console.log(container.children);
+
+        // Next sibling
+        console.log(taskInput.nextElementSibling);
+
+        // Previous sibling
+        console.log(addButton.previousElementSibling);
+
+
+        // =========================
+        // 3. INPUT EVENT
+        // =========================
+
+        taskInput.addEventListener("input", function () {
+
+            console.log("User typed:", taskInput.value);
+
+        });
+
+
+        // =========================
+        // 4. BUTTON CLICK EVENT
+        // =========================
+
+        addButton.addEventListener("click", function () {
+
+            let taskText = taskInput.value;
+
+            // Check empty input
+            if (taskText === "") {
+                alert("Please enter a task");
+                return;
+            }
+
+
+            // =========================
+            // 5. CREATE ELEMENT
+            // =========================
+
+            let task = document.createElement("li");
+
+            task.textContent = taskText;
+
+
+            // =========================
+            // 6. CREATE DELETE BUTTON
+            // =========================
+
+            let deleteButton = document.createElement("button");
+
+            deleteButton.textContent = "Delete";
+
+
+            // =========================
+            // 7. ADD DELETE EVENT
+            // =========================
+
+            deleteButton.addEventListener("click", function () {
+
+                // Remove task
+                task.remove();
+
+            });
+
+
+            // =========================
+            // 8. ADD BUTTON TO TASK
+            // =========================
+
+            task.appendChild(deleteButton);
+
+
+            // =========================
+            // 9. ADD TASK TO DOM
+            // =========================
+
+            taskList.appendChild(task);
+
+
+            // =========================
+            // 10. MOUSE EVENT
+            // =========================
+
+            task.addEventListener("mouseenter", function () {
+
+                console.log("Mouse entered task");
+
+            });
+
+            task.addEventListener("mouseleave", function () {
+
+                console.log("Mouse left task");
+
+            });
+
+
+            // Clear input
+            taskInput.value = "";
+
+        });
+
+
+    </script>
+
+</body>
+</html>
