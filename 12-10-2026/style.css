@@ -101,3 +101,145 @@ h2 {
     border: 2px solid orange;
     padding: 10px;
 }
+/* Universal Selector */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Element Selector */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fb;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #123456;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+/* Navigation */
+nav {
+    background-color: #087e8b;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+/* Hover Pseudo-class */
+nav a:hover {
+    color: #ffdd57;
+    text-decoration: underline;
+}
+
+/* Common Section Styling */
+section {
+    padding: 35px 20px;
+    margin: 20px auto;
+    max-width: 1100px;
+}
+
+section h2 {
+    color: #123456;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Class Selector */
+.welcome {
+    text-align: center;
+}
+
+/* ID Selector */
+#about {
+    background-color: white;
+    border: 2px solid #d6e4f0;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Services */
+#services {
+    text-align: center;
+}
+
+.service-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.service-card {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 25px;
+    width: 300px;
+    min-height: 180px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    background-color: #e8f8fa;
+    transform: translateY(-5px);
+}
+
+.service-card h3 {
+    color: #087e8b;
+    margin-bottom: 10px;
+}
+
+/* Contact Section */
+#contact {
+    background-color: #dceef7;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#contact p {
+    margin: 8px 0;
+}
+
+/* Footer */
+footer {
+    background-color: #123456;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 25px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 5px 8px;
+    }
+
+    .service-card {
+        width: 100%;
+    }
+}
