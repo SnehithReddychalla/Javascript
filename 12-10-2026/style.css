@@ -1,0 +1,103 @@
+/* General webpage styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 20px;
+}
+
+h1 {
+    color: blue;
+    text-align: center;
+}
+
+h2 {
+    color: darkgreen;
+}
+
+/* 1. Border style, width and color */
+.solid-border {
+    border-style: solid;
+    border-width: 3px;
+    border-color: red;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+/* 2. Dashed border */
+.dashed-border {
+    border: 3px dashed blue;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+/* 3. Rounded corners */
+.rounded-border {
+    border: 3px solid green;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+/* 4. Background color */
+.color-background {
+    background-color: lightblue;
+    padding: 25px;
+    margin-bottom: 10px;
+}
+
+/* 5. Background image */
+.image-background {
+    min-height: 200px;
+
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    border: 2px solid black;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+/* 6. Fixed width and height */
+.fixed-box {
+    width: 300px;
+    height: 100px;
+    background-color: lightcoral;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* 7. Responsive dimensions */
+.responsive-box {
+    width: 80%;
+    min-height: 80px;
+    background-color: lightgreen;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* 8. Viewport units */
+.viewport-box {
+    width: 50vw;
+    height: 15vh;
+    background-color: lightpink;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* 9. Minimum and maximum dimensions */
+.limited-box {
+    width: 90%;
+    min-width: 200px;
+    max-width: 600px;
+
+    height: auto;
+    min-height: 80px;
+    max-height: 200px;
+
+    overflow: auto;
+    background-color: lightyellow;
+    border: 2px solid orange;
+    padding: 10px;
+}

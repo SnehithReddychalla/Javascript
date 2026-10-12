@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Introduction</title>
+
+    <!-- Internal CSS -->
+    <style>
+        /* Universal Selector */
+        * {
+            font-family: Arial;
+        }
+
+        /* Element Selector */
+        p {
+            color: blue;
+        }
+
+        /* Class Selector */
+        .highlight {
+            background-color: yellow;
+        }
+
+        /* ID Selector */
+        #heading {
+            color: red;
+        }
+
+        /* Group Selector */
+        h2, h3 {
+            color: green;
+        }
+
+        /* Attribute Selector */
+        input[type="text"] {
+            border: 2px solid blue;
+        }
+
+        /* Descendant Selector */
+        div p {
+            background-color: lightyellow;
+        }
+
+        /* Child Selector */
+        div > h3 {
+            color: purple;
+        }
+
+        /* Adjacent Sibling Selector */
+        h2 + p {
+            color: orange;
+        }
+
+        /* General Sibling Selector */
+        h2 ~ h4 {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="heading">Introduction to CSS</h1>
+
+    <!-- Inline CSS -->
+    <p style="color: darkgreen;">
+        This paragraph uses Inline CSS.
+    </p>
+
+    <h2>CSS Selectors Example</h2>
+
+    <p>This paragraph is immediately after h2.</p>
+
+    <h4>This h4 is a sibling of h2.</h4>
+    <h4>This h4 is also a sibling of h2.</h4>
+
+    <h3>Group Selector Example</h3>
+
+    <p class="highlight">
+        This paragraph uses a Class Selector.
+    </p>
+
+    <div>
+        <p>This paragraph uses a Descendant Selector.</p>
+
+        <h3>This heading uses a Child Selector.</h3>
+    </div>
+
+    <label>Enter your name:</label>
+    <input type="text" placeholder="Your name">
+
+    <br><br>
+
+    <input type="email" placeholder="Your email">
+    
+    
+
+    
+
+</body>
+</html>
