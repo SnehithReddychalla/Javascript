@@ -1,0 +1,311 @@
+.box{
+    width: 200px;
+    height:100px;
+    
+    padding:20px;
+    border:5px solid blue;
+    margin:30px;
+    background-color:lightyellow
+}
+.box{
+    box-sizing:content-box;
+    width:200px;
+    padding:20px;
+    border:5px solid blue;
+}
+.box{
+    box-sizing:border-box;
+    width:200px;
+    padding:20px;
+    border:5px solid blue;
+}
+.first{
+    margin-bottom:30px;
+    background-color:lightblue;
+
+}
+.second{
+    margin-top:20px;
+    background-color:lightgreen;
+}
+.overflow-box{
+    width:200px;
+    height:80px;
+    border:2px solid green;
+    margin-bottom:15px;
+}
+.block {
+    display:block;
+    background-color:lightblue;
+    padding:10px;
+    margin:5px;
+}
+.inline{
+    dispaly:inline;
+    background-color:lightblue;
+}
+.card{
+    display:inline-block;
+    width:120px;
+    height:70px;
+    padding:10px;
+    margin:5px;
+    background-color:lightyellow;
+    border:1px solid black;
+}
+.one{
+    display:none;
+}
+.two{
+    visibility:hidden;
+}
+.box{
+    position:static;
+}
+.relative-box{
+    position:reletive;
+    left:30px;
+    top:10px;
+    background-color:lightblue;
+}
+.parent{
+    position:reletive;
+    width:250px;
+    height:150px;
+    border:2px solid black;
+}
+.child{
+    position:absolute;
+    top:10px;
+    right:10px;
+    background-color:orange;
+}
+.help-button{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background-color:navy;
+    color:white;
+    padding:12px;
+}
+.sticky-heading{
+    position:sticky;
+    top:0;
+    background-color:lightyellow;
+    padding:10px;
+}
+.overlap-box{
+    position:absolute;
+    width:150px;
+    height:100px;
+    padding:10px;
+}
+.box1{
+    top:20px;
+    left:20px;
+    background-color:lightblue;
+    z-index:1;
+}
+.box2{
+    top: 60px;
+    left:80px;
+    background-color:orange;
+    z-index:2;
+}
+.float-box{
+    float:left;
+    width:120px;
+    height:100px;
+    background-color:lightblue;
+    margin:0 15px 10px 0;
+}
+/* Apply box sizing to all elements */
+* {
+    box-sizing: border-box;
+}
+
+/* Body and spacing */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f5f9;
+    color: #263238;
+    line-height: 1.6;
+}
+
+/* Header */
+.header {
+    background-color: #173b65;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+    margin: 0;
+}
+
+/* Navigation */
+.navbar {
+    background-color: #24578a;
+    padding: 12px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    margin: 3px;
+}
+
+.navbar a:hover {
+    background-color: #173b65;
+    border-radius: 5px;
+}
+
+/* Main container */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 25px auto;
+    padding: 15px;
+}
+
+/* Profile card */
+.profile-card {
+    background-color: white;
+    text-align: center;
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 2px solid #d8e2ed;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 3px 10px #00000010;
+}
+
+/* Profile initials */
+.profile-icon {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto;
+    border: 3px solid #24578a;
+    border-radius: 50%;
+    background-color: #e0edff;
+    color: #173b65;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 84px;
+}
+
+/* Status */
+.status {
+    display: inline-block;
+    background-color: #d8f5df;
+    color: #17652b;
+    padding: 5px 12px;
+    margin-top: 8px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+/* Information sections */
+.info-section {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #d8e2ed;
+    border-radius: 10px;
+}
+
+.info-section h2 {
+    color: #173b65;
+    margin-top: 0;
+}
+
+/* Skills */
+.skill {
+    display: inline-block;
+    background-color: #e0edff;
+    color: #173b65;
+    padding: 7px 15px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+/* Information cards */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.card {
+    flex: 1 1 200px;
+    padding: 18px;
+    border: 1px solid #c9d9ea;
+    border-radius: 8px;
+    background-color: #f7faff;
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #24578a;
+}
+
+/* Overflow example */
+.overflow-box {
+    height: 100px;
+    overflow: auto;
+    padding: 12px;
+    border: 2px solid #24578a;
+    background-color: #f7faff;
+}
+
+/* Positioning example */
+.position-box {
+    position: relative;
+    padding: 25px 15px;
+    border: 2px solid #24578a;
+    border-radius: 8px;
+    background-color: #f7faff;
+}
+
+/* Absolute positioning inside relative parent */
+.badge {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    background-color: #d94841;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+/* Footer */
+.footer {
+    background-color: #173b65;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 25px;
+}
+
+/* Responsive layout for small screens */
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .navbar a {
+        padding: 6px 8px;
+    }
+
+    .card-container {
+        flex-direction: column;
+    }
+}
