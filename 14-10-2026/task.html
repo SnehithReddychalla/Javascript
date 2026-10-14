@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Admin Dashboard</title>
+
+    <style>
+        /* 1. Basic CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f5f9;
+            color: #1e293b;
+        }
+
+        /* 2. Header */
+        header {
+            background-color: #1e293b;
+            color: white;
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        header h2 {
+            font-size: 24px;
+        }
+
+        header nav {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        header nav a:hover {
+            color: #38bdf8;
+        }
+
+        /* 3. Main dashboard layout */
+        .dashboard {
+            display: grid;
+            grid-template-columns: 220px minmax(0, 1fr);
+            min-height: calc(100vh - 125px);
+        }
+
+        /* 4. Sidebar */
+        .sidebar {
+            background-color: #334155;
+            padding: 25px 15px;
+            color: white;
+        }
+
+        .sidebar h3 {
+            margin-bottom: 20px;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 12px;
+            margin-bottom: 8px;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        .sidebar a:hover {
+            background-color: #475569;
+        }
+
+        /* 5. Main content */
+        main {
+            padding: 25px;
+            min-width: 0;
+        }
+
+        main h1 {
+            margin-bottom: 10px;
+        }
+
+        .description {
+            color: #64748b;
+            margin-bottom: 25px;
+        }
+
+        /* 6. Statistics cards using Grid */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 18px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 22px;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 5px #0000000a;
+        }
+
+        .card p {
+            color: #64748b;
+            margin-bottom: 12px;
+        }
+
+        .card h2 {
+            font-size: 27px;
+            margin-bottom: 8px;
+        }
+
+        .growth {
+            color: #16a34a;
+            font-size: 14px;
+        }
+
+        /* 7. Main content section */
+        .content-box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .content-box h2 {
+            margin-bottom: 15px;
+        }
+
+        .activity {
+            padding: 14px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .activity:last-child {
+            border-bottom: none;
+        }
+
+        /* 8. Responsive data table */
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            min-width: 550px;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 15px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            background-color: #f8fafc;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 20px;
+            background-color: #dcfce7;
+            color: #166534;
+            font-size: 13px;
+        }
+
+        /* 9. Footer */
+        footer {
+            text-align: center;
+            background-color: #1e293b;
+            color: white;
+            padding: 18px;
+        }
+
+        /* 10. Tablet screens */
+        @media (max-width: 1000px) {
+            .dashboard {
+                grid-template-columns: 180px minmax(0, 1fr);
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            main {
+                padding: 20px;
+            }
+        }
+
+        /* 11. Mobile screens */
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            header nav {
+                gap: 12px;
+            }
+
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                padding: 12px;
+            }
+
+            .sidebar h3 {
+                margin: 5px 0 10px;
+            }
+
+            .sidebar a {
+                display: inline-block;
+                padding: 10px;
+                margin: 0 3px 5px 0;
+            }
+
+            main {
+                padding: 15px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .card {
+                padding: 18px;
+            }
+
+            .card h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header and navigation -->
+    <header>
+        <h2>AdminPanel</h2>
+
+        <nav>
+            <a href="#dashboard">Home</a>
+            <a href="#statistics">Statistics</a>
+            <a href="#users">Users</a>
+            <a href="#footer">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Dashboard layout -->
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h3>Menu</h3>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#statistics">Analytics</a>
+            <a href="#users">User Management</a>
+            <a href="#activity">Recent Activity</a>
+            <a href="#footer">Settings</a>
+        </aside>
+
+        <!-- Main content -->
+        <main id="dashboard">
+
+            <h1>Dashboard Overview</h1>
+            <p class="description">
+                Welcome back! Here is your business summary.
+            </p>
+
+            <!-- Statistics cards -->
+            <section class="stats" id="statistics">
+
+                <div class="card">
+                    <p>Total Users</p>
+                    <h2>2,450</h2>
+                    <span class="growth">+19% this month</span>
+                </div>
+
+                <div class="card">
+                    <p>Total Revenue</p>
+                    <h2>₹85,000</h2>
+                    <span class="growth">+6% this month</span>
+                </div>
+
+                <div class="card">
+                    <p>Total Orders</p>
+                    <h2>1,250</h2>
+                    <span class="growth">+19% this month</span>
+                </div>
+
+                <div class="card">
+                    <p>Pending Orders</p>
+                    <h2>24</h2>
+                    <span>Needs attention</span>
+                </div>
+
+            </section>
+
+            <!-- Main content section -->
+            <section class="content-box" id="activity">
+                <h2>Recent Activity</h2>
+
+                <div class="activity">
+                    <strong>New user registered</strong>
+                    <p>Rahul joined the platform recently.</p>
+                </div>
+
+                <div class="activity">
+                    <strong>New order received</strong>
+                    <p>Order #1004 has been placed.</p>
+                </div>
+
+                <div class="activity">
+                    <strong>Payment completed</strong>
+                    <p>Payment for order #1002 was successful.</p>
+                </div>
+            </section>
+
+            <!-- Data table -->
+            <section class="content-box" id="users">
+                <h2>Recent Users</h2>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>101</td>
+                                <td>Rahul</td>
+                                <td>rahul@example.com</td>
+                                <td>Admin</td>
+                                <td><span class="status">Active</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>102</td>
+                                <td>Priya</td>
+                                <td>priya@example.com</td>
+                                <td>Editor</td>
+                                <td><span class="status">Active</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>103</td>
+                                <td>Kiran</td>
+                                <td>kiran@example.com</td>
+                                <td>User</td>
+                                <td><span class="status">Active</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>104</td>
+                                <td>Sneha</td>
+                                <td>sneha@example.com</td>
+                                <td>User</td>
+                                <td><span class="status">Active</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <p>&copy; 2026 AdminPanel. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

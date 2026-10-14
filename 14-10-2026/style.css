@@ -1,0 +1,230 @@
+.container{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
+    padding:20px;
+    border:2px solid black;
+    min-height:150px;
+}
+.box{
+    background-color:lightblue;
+    border:2px solid blue;
+    padding:25px;
+    flex:1;
+}
+.html {
+    order: 2;
+}
+.css {
+    order: 1;
+}
+.flex container{
+    display:flex;
+    gap:10px;
+    border:2px solid black;
+    padding:10px;
+}
+.item{
+    background-color:lightgreen;
+    padding:20px;
+    text-align:left;
+}
+.item1{
+    flex-grow: 1;
+    
+}
+.item2{
+    flex-shrink:1;
+    flex-basis:200px;
+}
+.item3{
+    flex-basis:200px;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr)
+    gap:10px;
+    padding:10px;
+    border:2px solod black;
+    
+}
+.grid-item{
+    background-color:Lightyellow;
+    border:1px solid orange;
+    padding:20px;
+    text-align:center;
+}
+/* 1. Mobile-first design */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f1f5f9;
+    color: #222;
+}
+
+/* 2. Flexbox navigation */
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background-color: #123456;
+    color: white;
+}
+
+.logo {
+    margin: 0;
+}
+
+.navigation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+}
+
+/* 3. CSS Grid layout with Grid Areas */
+.layout {
+    display: grid;
+
+    /* minmax() sets minimum and maximum sizes */
+    grid-template-columns: minmax(0, 1fr);
+
+    grid-template-areas:
+        "hero"
+        "sidebar"
+        "services"
+        "about"
+        "contact";
+
+    gap: 15px;
+    padding: 15px;
+}
+
+/* Assigning Grid Areas */
+.hero {
+    grid-area: hero;
+    background-color: #bfdbfe;
+    padding: 25px;
+    text-align: center;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: #dbeafe;
+    padding: 20px;
+}
+
+.services {
+    grid-area: services;
+    padding: 20px;
+    background-color: white;
+}
+
+.about {
+    grid-area: about;
+    padding: 20px;
+    background-color: #dcfce7;
+}
+
+.contact {
+    grid-area: contact;
+    padding: 20px;
+    background-color: #fef3c7;
+}
+
+/* 4. Responsive service cards using Grid and minmax() */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 200px), 1fr)
+    );
+
+    gap: 15px;
+
+    /* Grid alignment */
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.card {
+    padding: 20px;
+    background-color: #e0e7ff;
+    border: 1px solid #c7d2fe;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* 5. Flexbox footer */
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 15px;
+    background-color: #123456;
+    color: white;
+    text-align: center;
+}
+
+.footer p {
+    margin: 5px;
+}
+
+/* 6. Tablet layout */
+@media (min-width: 600px) {
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .layout {
+        grid-template-columns: 1fr 2fr;
+
+        grid-template-areas:
+            "hero hero"
+            "sidebar services"
+            "about about"
+            "contact contact";
+
+        align-items: stretch;
+    }
+
+    .footer {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+/* 7. Desktop layout */
+@media (min-width: 900px) {
+    .layout {
+        max-width: 1200px;
+        margin: 0 auto;
+
+        grid-template-columns: 1fr 3fr 1fr;
+
+        grid-template-areas:
+            "hero hero hero"
+            "sidebar services services"
+            "about about contact";
+    }
+
+    .hero {
+        padding: 40px;
+    }
+}
