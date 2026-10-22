@@ -1,0 +1,59 @@
+P{
+    color:blue;
+}
+.text{
+    color:green;
+}
+#message{
+    color:red;
+}
+.parent{
+    color:purple;
+    font-family:Arial,sans-serif;
+}
+.button:hover{
+    background-color:orange;
+    color:white
+}
+input:focus{
+    outline:3px solid orange;
+}
+button:active{
+    transform:scale(0.95);
+}
+li:first-child{
+    color:green;
+}
+li.last-child{
+    color:red;
+}
+li.nth-child(2){
+    font-weight:bold;
+}
+.heading::before {
+  content: "★ ";
+  color: orange;
+}
+
+.heading::after {
+  content: " ✓";
+  color: green;
+}
+
+.intro::first-letter {
+  font-size: 30px;
+  color: red;
+}
+
+.intro::first-line {
+  font-weight: bold;
+}
+input [type="text"]{
+    border:2px solid blue;
+}
+input[type="email"]{
+    border:2px solid green;
+}
+a[href^"https"]{
+    color:purple;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student management</title>
+</head>
+<body>
+   <h3>Student List</h3>
+   <input id="name" placeholder="Enter student name">
+   <button onclick="add()">Add</button>
+   <ul id="list" ></ul>
+   <script>
+    function add(){
+        let n=
+        document.getElementById("name").value;
+        if(n.trim()=="")return;
+        let li=document.createElement("li");
+        li.innerHTML=n+'<button onclick="this.parentElement.remove()">Delete</button>';
+        document.getElementById("list").appendChild(li);
+        document.getElementById(name).value="";
+    }
+   </script>
+
+</body>
+</html>
