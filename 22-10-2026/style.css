@@ -1,0 +1,99 @@
+inpuṭ[type="text"]{
+    border:2px solid blue;
+}
+input[type="email"]{
+    border:2px solid green;
+}
+input[type="password"]{
+    border:2px solid red;
+}
+.box p{
+    color:blue;
+}
+.box > h2{
+color:red;
+}
+h2 +p{
+    background-color:yellow;
+}
+h2 ~ h3{
+    color:green;
+}
+button{
+    background-color:blue;
+    color:white;
+    padding:10px 20px;
+    border:none;
+    cursor:pointer;
+}
+
+button:hover{
+    background-color:green;
+}
+
+button:active{
+    background-color:red;
+}
+
+input:focus{
+    background-color:lightyellow;
+    outline:2px solid orange;
+}
+li:first-child{
+    color:red;
+}
+li:last-child{
+    color:blue;
+}
+
+li:nth-child(2){
+    background-color:lightgreen;
+}
+h2::before {
+    content: "★ ";
+    color: orange;
+}
+
+h2::after {
+    content: " ★";
+    color: orange;
+}
+
+p::first-letter {
+    color: blue;
+    font-size: 30px;
+}
+
+p::first-line {
+    font-weight: bold;
+}
+:root{
+    --main-color:blue;
+    --text-color:white;
+    --card-bg:lightblue;
+    --box-space:20px;
+    --heading-size:30px;
+}
+body{
+    front-family:arial,sans-serif;
+    padding:var(--box-space);
+}
+h1{
+    color:var(--main-color);
+    front-size: 
+    var(--heading-size;
+}
+.card{
+    background-color:
+    var(--card-bg);
+    padding:var(--box-space);
+    margin-bottom: 
+    var(--box-space);
+}
+button{
+    background-color:
+    var(--main-color);
+    color:var(--text-color);
+    padding:10px 20px;
+    border:none;
+}

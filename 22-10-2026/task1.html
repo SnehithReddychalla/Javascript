@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Product Card</title>
+
+    <style>
+        /* 1. CSS Variables */
+        :root {
+            --primary: #635bff;
+            --dark: #22223b;
+            --light: #f5f6fa;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.10);
+        }
+
+        /* 2. Basic Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--light);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+        }
+
+        /* 3. Product Card */
+        .product-card {
+            background: var(--white);
+            width: 320px;
+            max-width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease,
+                        box-shadow 0.3s ease;
+        }
+
+        /* 4. Hover Effect + Transition */
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 45px rgba(0,0,0,0.18);
+        }
+
+        /* 5. Image Section */
+        .image-box {
+            height: 230px;
+            position: relative;
+            background: #eeeaff;
+            overflow: hidden;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .image-box img {
+            transform: scale(1.08);
+        }
+
+        /* 6. Pseudo-element */
+        .image-box::after {
+            content: "BEST SELLER";
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--primary);
+            color: white;
+            padding: 7px 12px;
+            font-size: 11px;
+            font-weight: bold;
+            border-radius: 20px;
+            letter-spacing: 1px;
+        }
+
+        /* 7. Product Details */
+        .product-info {
+            padding: 22px;
+        }
+
+        .category {
+            color: var(--primary);
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .product-info h2 {
+            color: var(--dark);
+            font-size: 23px;
+            margin: 10px 0;
+        }
+
+        .description {
+            color: #777;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 14px;
+        }
+
+        /* 8. Rating */
+        .rating {
+            margin-bottom: 18px;
+            font-size: 14px;
+        }
+
+        .stars {
+            color: #f5a623;
+            letter-spacing: 2px;
+        }
+
+        .rating-text {
+            color: #777;
+            font-size: 12px;
+        }
+
+        /* 9. Price */
+        .price-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            font-size: 27px;
+            font-weight: bold;
+            color: var(--dark);
+        }
+
+        .old-price {
+            color: #999;
+            text-decoration: line-through;
+            font-size: 14px;
+        }
+
+        /* 10. Add to Cart Button */
+        .cart-btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: var(--primary);
+            color: var(--white);
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease,
+                        transform 0.2s ease;
+        }
+
+        .cart-btn:hover {
+            background: #4940d8;
+            transform: scale(1.03);
+        }
+
+        .cart-btn:active {
+            transform: scale(0.97);
+        }
+
+        .cart-btn:focus-visible {
+            outline: 3px solid #a9a4ff;
+            outline-offset: 3px;
+        }
+
+        /* 11. Mobile Responsive */
+        @media (max-width: 400px) {
+            .product-card {
+                width: 100%;
+            }
+        }
+
+        /* 12. Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="product-card">
+
+        <!-- Product Image -->
+        <div class="image-box">
+            <img
+                src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80"
+                alt="Premium wireless headphones"
+            >
+        </div>
+
+        <!-- Product Information -->
+        <div class="product-info">
+
+            <p class="category">Audio Collection</p>
+
+            <h2>Wireless Headphones</h2>
+
+            <p class="description">
+                Experience amazing sound quality with
+                comfortable ear cushions and a stylish design.
+            </p>
+
+            <!-- Rating -->
+            <div class="rating">
+                <span class="stars" aria-label="5 out of 5 stars">
+                    ★★★★★
+                </span>
+                <span class="rating-text">(128 reviews)</span>
+            </div>
+
+            <!-- Price -->
+            <div class="price-row">
+                <span class="price">₹2,499</span>
+                <span class="old-price">₹3,999</span>
+            </div>
+
+            <!-- Button -->
+            <button class="cart-btn" type="button"
+                onclick="addToCart()">
+                Add to Cart
+            </button>
+
+        </div>
+    </div>
+
+    <script>
+        function addToCart() {
+            alert("Wireless Headphones added to cart!");
+        }
+    </script>
+
+</body>
+</html>
