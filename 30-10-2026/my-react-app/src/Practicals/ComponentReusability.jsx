@@ -1,0 +1,3 @@
+function Student(props){
+    return
+}
